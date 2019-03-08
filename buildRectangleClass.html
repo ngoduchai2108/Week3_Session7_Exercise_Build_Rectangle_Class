@@ -5,6 +5,10 @@
     <title>BuildRectangleClass</title>
 </head>
 <body>
+<center>
+    <h1>Show Rectangle</h1>
+    <canvas id="myCanvas" width="500" height="400" style="border: 1px solid#d3d3d3" ></canvas>
+</center>
 <script>
     let MyRectangle = function (x, y) {
         this.heght = x;
@@ -15,6 +19,21 @@
         this.area = function () {
             return x * y;
         };
+        this.show = function () {
+            let pen = document.getElementById('myCanvas').getContext("2d");
+            pen.moveTo(0+10,0+10);
+            pen.lineTo(x+10,0+10);
+            pen.stroke();
+            pen.moveTo(x+10,0+10);
+            pen.lineTo(x+10,y+10);
+            pen.stroke();
+            pen.moveTo(x+10,y+10);
+            pen.lineTo(0+10,y+10);
+            pen.stroke();
+            pen.moveTo(0+10,y+10);
+            pen.lineTo(0+10,0+10);
+            pen.stroke();
+        }
     };
     //circumference là chu vi
     let heght = parseInt(prompt('enter chieu dai'));
@@ -23,6 +42,7 @@
     let circumference = rectangle.circumference();
     let area = rectangle.area();
     alert('Rectangle with heght = ' + rectangle.heght + ', width = ' + rectangle.width + ' have Circumference is ' + circumference + ' and Area is ' + area);
+    rectangle.show();
 
 </script>
 
