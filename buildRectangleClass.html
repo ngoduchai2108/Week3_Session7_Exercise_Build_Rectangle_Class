@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BuildRectangleClass</title>
+</head>
+<body>
+<script>
+    let MyRectangle = function (x, y) {
+        this.heght = x;
+        this.width = y;
+        this.circumference = function () {
+            return 2 * (x + y);
+        };
+        this.area = function () {
+            return x * y;
+        };
+    };
+    //circumference là chu vi
+    let heght = parseInt(prompt('enter chieu dai'));
+    let width = parseInt(prompt('enter chieu rong'));
+    let rectangle = new MyRectangle(heght, width);
+    let circumference = rectangle.circumference();
+    let area = rectangle.area();
+    alert('Rectangle with heght = ' + rectangle.heght + ', width = ' + rectangle.width + ' have Circumference is ' + circumference + ' and Area is ' + area);
+
+</script>
+
+</body>
+</html>
